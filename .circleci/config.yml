@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Generate config
           command: |
-            cat ~/.circleci/config.yml > generated_config.yml
+            cat ~/project/.circleci/config.yml > generated_config.yml
       - continuation/continue:
           configuration_path: generated_config.yml
 
