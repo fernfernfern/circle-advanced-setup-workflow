@@ -20,11 +20,7 @@ jobs:
                 docker:
                   - image: cimg/base:2021.04
                 steps:
-                  - run: echo DYNAMIC CONFIG WOOOOO
-            workflows:
-              workflow1:
-                jobs:
-                  - job1
+                  - run: echo dynamic config!
             EOF
       - continuation/continue:
           configuration_path: main.yml
