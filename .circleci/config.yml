@@ -21,6 +21,10 @@ jobs:
                   - image: cimg/base:2021.04
                 steps:
                   - run: echo dynamic config!
+            workflows:
+             workflow1:
+              jobs:
+               - job1
             EOF
       - continuation/continue:
           configuration_path: main.yml
