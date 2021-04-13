@@ -13,9 +13,21 @@ jobs:
       - run:
           name: Generate config
           command: |
-            cat ~/project/.circleci/config.yml > generated_config.yml
+            cat > main.yml \<<- "EOF"
+            version: 2.1
+            jobs:
+              job1:
+                docker:
+                  - image: cimg/base:2021.04
+                steps:
+                  - run: echo DYNAMIC CONFIG WOOOOO
+            workflows:
+              workflow1:
+                jobs:
+                  - job1
+            EOF
       - continuation/continue:
-          configuration_path: generated_config.yml
+          configuration_path: main.yml
 
 workflows:
   setup:
